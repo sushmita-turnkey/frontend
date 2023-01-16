@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import '../src/assets/style/style.scss';
+import ApplicantDetails from './Container/ApplicantDetails';
+import BankingDetails from './Container/BankingDetails';
+import Footer from './Container/Footer';
+import Header from './Container/Header';
+import InvestmentDetail from './Container/InvestmentDetail';
+import InvestmentRisk from './Container/InvestmentRisk';
+import Nominee from './Container/Nominee';
+import { FormProvider } from './Form/FormContext';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <FormProvider>
+      <div className='main bg-light'>
+      <InvestmentDetail/>
+      <ApplicantDetails/>
+      <BankingDetails/>
+      <Nominee/>
+      <InvestmentRisk/>
+      <Footer/>
+      </div>
+      </FormProvider>
+      
     </div>
   );
 }
 
 export default App;
+
+

@@ -1,0 +1,83 @@
+// header
+
+.welcome {
+    font-weight: 400;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    p {
+        color: $primary;
+        line-height: 27px;
+    }
+    span {
+        color: $secondary;
+        line-height: 27px;
+    }
+}
+
+// applicant details
+.dob {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+}
+
+// bank detail
+
+.radio-col {
+    border: 1px solid #787878;
+    border-radius: 6px;
+    color: black;
+}
+.radio {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 29px;
+}
+input[type="radio" i] {
+    background-color: #787878 !important;
+}
+
+// npminee
+.nominee {
+    color: #fff;
+    font-weight: 500;
+    font-size: 28px;
+    padding: 10px 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $primary;
+}
+
+
+// investment risk
+
+.radio-inv{
+font-weight: 400;
+font-size: 22px;
+line-height: 29px;color: #000000;
+}
+
+// footer
+.footer-title{
+    p{
+font-weight: 400;
+font-size: 22px;
+line-height: 27px;
+
+color: $primary;
+    }
+    
+}
+.capt-input{
+    width: 351px;
+height: 65px;
+left: 156px;
+top: 440px;
+
+background: #FFFFFF;
+border: 1px solid #787878;
+border-radius: 6px;
+}

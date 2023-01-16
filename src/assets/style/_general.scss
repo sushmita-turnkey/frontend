@@ -1,0 +1,98 @@
+@import "~bootstrap/scss/bootstrap";
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #fff;
+  width: 100%;
+  height: 100vh;
+  // overflow: hidden;
+  font-size: 16px;
+  font-style: normal;
+  font-family:"Inter "sans-serif;
+  padding: 88px 156px;
+  @media (max-width: $smallScreen) {
+  padding: 58px 70px;
+  }
+  @media (max-width: 500px) {
+    padding: 58px 50px;
+    }
+}
+// #root {
+//     width: 100%;
+//     height: 100vh;
+//     overflow-x: hidden;
+//     // overflow-y: hidden;
+//     position: relative;
+//   }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  p {
+    margin: 0;
+  }
+
+
+// Font Sizes
+$i: 8;
+
+@while $i<=166 {
+  .fs-#{$i} {
+    font-size: calc($i / $root-font-size)rem !important;
+  }
+
+  $i: $i + 1;
+}
+
+@media (min-width: $smallScreen) {
+  $i: 8;
+
+  @while $i<=166 {
+    .fs-sm-#{$i} {
+      font-size: calc($i / $root-font-size)rem !important;
+    }
+
+    $i: $i + 1;
+  }
+}
+
+@media (min-width: $mediumScreen) {
+  $i: 8;
+
+  @while $i<=166 {
+    .fs-md-#{$i} {
+      font-size: calc($i / $root-font-size)rem !important;
+    }
+
+    $i: $i + 1;
+  }
+}
+
+@media (min-width: $largeScreen) {
+  $i: 8;
+
+  @while $i<=166 {
+    .fs-lg-#{$i} {
+      font-size: calc($i / $root-font-size)rem !important;
+    }
+
+    $i: $i + 1;
+  }
+}
+
+@media (min-width: $xLargeScreen) {
+  $i: 8;
+
+  @while $i<=166 {
+    .fs-xl-#{$i} {
+      font-size: calc($i / $root-font-size)rem !important;
+    }
+
+    $i: $i + 1;
+  }
+}
+
