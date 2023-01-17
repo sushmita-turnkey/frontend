@@ -22,13 +22,7 @@ const Input =
     }
   ) => {
     const [reset, setReset] = useState(uuidv4());
-    const [inputType, setInputType] = useState(type);
-
-    const onClear = () => {
-      onChange({ target: { value: "" } });
-      setReset(uuidv4());
-    };
-
+ 
     const restProps = () => {
       const temp = { ...rest };
       temp.defaultValue = temp.value || "";
@@ -54,7 +48,7 @@ const Input =
                 <input
                   key={`input-${reset}`}
                   id={`input-${id}`}
-                  type={inputType}
+                  type={type}
                   className={`${className}${isClearable ? " input-clearable" : ""} text`}
                   onChange={onChange}
                   onBlur={onBlur}
@@ -74,7 +68,7 @@ const Input =
             <input
               key={`input-${reset}`}
               id={`input-${id}`}
-              type={inputType}
+              type={type}
               className={`${className}${isClearable ? " input-clearable" : ""} text`}
               onChange={onChange}
               onBlur={onBlur}

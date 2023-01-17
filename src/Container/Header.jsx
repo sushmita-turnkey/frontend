@@ -4,7 +4,7 @@ export default function Header() {
     return (
         <Container className='w-100  pb-3 '>
             <div className="welcome fs-4" >
-                <p>Welcome Investor,</p> 
+                <p>WelcomeInvestor,</p> 
                 <span>
                     "To a World of Sustainable Wealth Creation"
                 </span>

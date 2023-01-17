@@ -1,4 +1,4 @@
-import React ,{useContext}from 'react'
+import React, { useContext } from 'react'
 import { FormContext } from '../../Form/FormContext';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
@@ -9,54 +9,54 @@ import { Col, Row } from 'react-bootstrap'
 
 const animatedComponents = makeAnimated();
 
-const Select = 
-  ({ options,bank, placeHolder, isClearable, para,name, isMulti, className, label, id, error, onChange, ...rest }) => {
+const Select =
+  ({ options, bank, placeHolder, isClearable, para, name, isMulti, className, label, id, error, onChange, ...rest }) => {
     const { formState, setFormState } = useContext(FormContext);
     function handleSelectChange(value) {
-     setFormState({...formState, [name]: value.value });
+      setFormState({ ...formState, [name]: value.value });
     }
     return (
       <div className='d-flex align-items-center pt-5'>
-         {bank?<Col className='nominee' sm={3} md={3}>
-                    <p className='fs-4'>Nominee Details</p>
-                </Col>:<Col sm={3}>
-         
-         <h5>{label}</h5> 
-         <p >{para}</p>
-      </Col>}
-        
-                <Col sm={1}></Col>
-                <Col sm={8} >
-                <span
-        className={`d-inline-block w-100 d-flex align-items-center position-relative input__wrapper ${error ? 'error' : ''}`}
-       
-      >
-        <ReactSelect
-          id={`input-select-${id}`}
-          name={name}
-          onChange={handleSelectChange} 
-          placeholder={placeHolder}
-          components={animatedComponents}
-          closeMenuOnSelect={!isMulti}
-          isMulti={isMulti}
-          options={options.map((option) => {
-            return {
-              value: option.value || option.label,
-              label: option.label,
-              isDisabled: !!option.isDisabled,
-            };
-          })}
-          isClearable={isClearable}
-          className={`input__select ${className}`}
-          {...rest}
-        />
-        {/* {label && <label htmlFor={`input-select-${id}`}>{label}</label>} */}
-        <span className="input-error">{error}</span>
-      </span>
-                </Col>
-        
+        {bank ? <Col className='nominee' sm={3} md={3}>
+          <p className='fs-4'>Nominee Details</p>
+        </Col> : <Col sm={3}>
+
+          <h5>{label}</h5>
+          <p >{para}</p>
+        </Col>}
+
+        <Col sm={1}></Col>
+        <Col sm={8} >
+          <span
+            className={`d-inline-block w-100 d-flex align-items-center position-relative input__wrapper ${error ? 'error' : ''}`}
+
+          >
+            <ReactSelect
+              id={`input-select-${id}`}
+              name={name}
+              onChange={handleSelectChange}
+              placeholder={placeHolder}
+              components={animatedComponents}
+              closeMenuOnSelect={!isMulti}
+              isMulti={isMulti}
+              options={options.map((option) => {
+                return {
+                  value: option.value || option.label,
+                  label: option.label,
+                  isDisabled: !!option.isDisabled,
+                };
+              })}
+              isClearable={isClearable}
+              className={`input__select ${className}`}
+              {...rest}
+            />
+            {/* {label && <label htmlFor={`input-select-${id}`}>{label}</label>} */}
+            <span className="input-error">{error}</span>
+          </span>
+        </Col>
+
       </div>
-      
+
     );
   }
 

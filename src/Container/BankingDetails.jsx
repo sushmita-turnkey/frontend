@@ -1,9 +1,8 @@
-import React,{useContext} from 'react'
+import React, { useContext } from 'react'
 import { FormContext } from '../Form/FormContext';
 import Container from '../Component/Container'
 import { Col, Row } from 'react-bootstrap'
 import Input from '../Component/Form/Input'
-import Select from '../Component/Form/Select'
 
 
 const data = [
@@ -11,20 +10,16 @@ const data = [
     {
         name: "bank_name",
         label: "Bank Name",
-
         type: "text",
     },
-
     {
         name: "account_no",
         label: "Account Number",
-
         type: "text",
     },
     {
         name: "account_title",
         label: "Account Title",
-
         type: "text",
     },
     {
@@ -37,7 +32,6 @@ const data = [
 
 ]
 export default function BankingDetails() {
-    const { formState, handleChange } = useContext(FormContext);
 
     return (
         <Container>
@@ -59,14 +53,12 @@ export default function BankingDetails() {
                     </Row>
                 </Col>
             </Row>
-
             <Row>
                 {data.map((i, id) => (
                     <Input
                         key={id}
                         type={i.type}
                         id={i.label}
-                        onChange={handleChange} 
                         label={i.label}
                         name={i.name}
                         bank={true}

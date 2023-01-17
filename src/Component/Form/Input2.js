@@ -1,10 +1,9 @@
-import React ,{useContext,useState}from 'react'
-import { FormContext } from '../../Form/FormContext';
+import React, {  useState } from 'react'
 import PropTypes from "prop-types";
 import { v4 as uuidv4 } from "uuid";
 import { Col, Row } from "react-bootstrap";
 
-const Input2 = 
+const Input2 =
     (
         {
             className,
@@ -32,7 +31,6 @@ const Input2 =
             delete temp.value;
             return temp;
         };
-    const { formState, handleChange } = useContext(FormContext);
 
         return (
             <div className='d-flex align-items-center pt-5'>
@@ -51,7 +49,7 @@ const Input2 =
                                     id={`input-${id}`}
                                     type={inputType}
                                     className={`${className}${isClearable ? " input-clearable" : ""} text`}
-                                    onChange={handleChange} 
+                                    onChange={onChange}
                                     onBlur={onBlur}
                                     placeholder={label}
                                     step="any"
