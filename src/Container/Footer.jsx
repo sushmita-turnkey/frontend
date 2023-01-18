@@ -11,7 +11,7 @@ export default function Footer() {
     event.preventDefault();
     
     if(captcha!==undefined ){
-        axios.post('https://glc1ga7mq4.execute-api.ap-south-1.amazonaws.com/dev/users/', formState)
+        axios.post('http://localhost:3001/users', formState)
       .then(response => {
         console.log(response);
       })
