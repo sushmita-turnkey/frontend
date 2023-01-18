@@ -69,7 +69,7 @@ export default function ApplicantDetails() {
         if (await checkImageResolution(files)) {
             const bodyFormData = new FormData();
             bodyFormData.append("image", files);
-            axios.post('http://3.108.237.32:3001/users/upload', bodyFormData)
+            axios.post('https://glc1ga7mq4.execute-api.ap-south-1.amazonaws.com/dev/users/upload', bodyFormData)
                 .then(response => {
                     handleUplaod(response.data.data)
                     alert("image url:- " + " " + response.data.data)
