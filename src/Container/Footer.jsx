@@ -1,23 +1,28 @@
-import React,{useContext} from 'react'
+import React,{useContext,useState} from 'react'
 import { FormContext } from '../Form/FormContext';
-
 import { Row ,Col} from 'react-bootstrap'
 import Container from '../Component/Container'
 import axios from 'axios';
 
 export default function Footer() {
     const { formState, handleChange } = useContext(FormContext);
-
+    const [captcha, setCaptcha] = useState()
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(formState);
-    // axios.post('https://your-endpoint.com/submit', formState)
-    //   .then(response => {
-    //     console.log(response.data);
-    //   })
-    //   .catch(error => {
-    //     console.log(error);
-    //   });
+    
+    if(captcha!==undefined ){
+        axios.post('https://glc1ga7mq4.execute-api.ap-south-1.amazonaws.com/dev/users/', formState)
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    }
+    else{
+        alert("enter the captcha")
+    }
+    
   }
   return (
    <Container>
@@ -29,7 +34,9 @@ export default function Footer() {
             <label className='para pb-2' htmlFor='captcha'>Enter Captcha</label>
         </Col>
         <Col sm={5}>
-            <input className='capt-input' id="captcha" name="captcha"type='text'/>
+            <input className='capt-input' onChange={
+                (e)=>setCaptcha(e.target.value)
+            } id="captcha" name="captcha"type='text'/>
         </Col>
     </Row>
     <Row className='pt-5 '>
